@@ -1,3 +1,8 @@
+
+
+
+https://github.com/user-attachments/assets/ea14fd16-9ac1-4480-9cff-1583b6681941
+
 //By Satpal Singh
 
 To test out this browser extension, follow these steps : 
