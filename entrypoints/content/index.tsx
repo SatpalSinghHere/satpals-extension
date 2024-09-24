@@ -1,6 +1,5 @@
 import "./style.css";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
 import MagicWand from "./components/MagicWand.tsx";
 import Overlay from "./components/Overlay.tsx";
 import ChatBox from "./components/ChatBox.tsx";
@@ -133,13 +132,22 @@ export default defineContentScript({
 
 
     
-    setInterval(() => {
+    const checkMessageBox = setInterval(() => {
       const anchor = document.querySelector('.msg-form__contenteditable')
 
       if (anchor && !anchor.querySelector('magic-wand')) {
-        console.log("Anchor found, mounting UI");
-        magicWand.remove();
-        magicWand.mount();
+
+        function mountMagicWand(){
+          magicWand.mount();
+        }
+        function removeMagicWand(){
+          magicWand.remove();
+        }
+        anchor.removeEventListener("focus", mountMagicWand)
+        anchor.removeEventListener("blur", removeMagicWand)
+
+        anchor.addEventListener("focus", mountMagicWand)
+        anchor.addEventListener("blur", removeMagicWand)
       }
 
       const wand = document.querySelector('magic-wand')
@@ -149,11 +157,12 @@ export default defineContentScript({
             chatOverlay.mount();
 
         })
+        clearInterval(checkMessageBox)
       }
 
       
 
-    }, 500);
+    }, 700);
 
 
 

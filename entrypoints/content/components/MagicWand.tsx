@@ -1,5 +1,5 @@
 import React from 'react'
-import magicWandImage from '@/assets/Frame.png'
+import magicWandImage from '@/assets/Frame.svg'
 
 const MagicWand= () => {
   return (

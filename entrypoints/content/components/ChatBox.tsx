@@ -1,5 +1,5 @@
 import React from 'react'
-import arrow from '@/assets/Arrow.png'
+import arrow from '@/assets/Arrow.svg'
 import Prompt from './Prompt'
 import Response from './Response'
 import GenerateButton from './GenerateButton'
@@ -20,6 +20,7 @@ const ChatBox = ({removeChatHandler}:{removeChatHandler:Function}) => {
     const insertResponse = ()=>{
 
         removeChatHandler();
+        setInputValue('');
 
         const messageBox = document.querySelector('.msg-form__contenteditable') as HTMLElement
         const pMessage = messageBox.querySelector('p')

@@ -1,6 +1,6 @@
 import React from 'react'
-import insertArrow from '@/assets/InsertArrow.png'
-import regenerateArrow from '@/assets/RegenrateArrow.png'
+import insertArrow from '@/assets/InsertArrow.svg'
+import regenerateArrow from '@/assets/RegenerateArrow.svg'
 
 const Regenerate = ({insertResponse}:{insertResponse:Function}) => {
 

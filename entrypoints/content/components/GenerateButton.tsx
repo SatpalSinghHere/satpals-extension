@@ -1,5 +1,5 @@
 import React from 'react'
-import arrow from '@/assets/Arrow.png'
+import arrow from '@/assets/Arrow.svg'
 
 const GenerateButton = ({addPrompt}:{addPrompt:Function}) => {
     return (
